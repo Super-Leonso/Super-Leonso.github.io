@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Video con sonido</title>
+</head>
+<body>
+
+  <button onclick="reproducir()">Reproducir Video</button>
+  
+  <video id="miVideo" controls width="640" height="360">
+    <source src="Conecting3.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+  <script>
+    function reproducir() {
+      const video = document.getElementById('miVideo');
+      video.muted = false;
+      video.play();
+    }
+  </script>
+
+</body>
+</html>
