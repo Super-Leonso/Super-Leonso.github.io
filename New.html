@@ -2,22 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Video con sonido</title>
+  <title>Conecting3 - Reproducción con sonido</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      cursor: pointer;
+    }
+    video {
+      width: 960px;
+      height: 540px;
+    }
+  </style>
 </head>
-<body>
+<body onclick="activarVideo()">
 
-  <button onclick="reproducir()">Reproducir Video</button>
-  
-  <video id="miVideo" controls width="960" height="540">
+  <video id="miVideo" controls>
     <source src="Conecting3.mp4" type="video/mp4">
     Tu navegador no soporta la etiqueta de video.
   </video>
 
   <script>
-    function reproducir() {
-      const video = document.getElementById('miVideo');
+    function activarVideo() {
+      const video = document.getElementById("miVideo");
       video.muted = false;
       video.play();
+      document.body.onclick = null; // Eliminar el evento para que no se repita
     }
   </script>
 
